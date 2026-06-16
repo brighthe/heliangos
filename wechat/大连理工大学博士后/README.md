@@ -4,8 +4,7 @@
 
 ## 内容
 
-- `teachers/<姓名>.md` —— 每位老师一个文件：**人物档案 + 沟通口径 + 聊天记录**（格式见 [teachers/_TEMPLATE.md](teachers/_TEMPLATE.md)）。
-- `screenshots/<姓名>/YYYY-MM-DD-n.png` —— 该老师聊天的原始截图，按日期归档，备查。
+- `teachers/<姓名>.md` —— 每位老师一个文件：**人物档案 + 关键信息 + 当前未决 + 聊天记录**（格式见 [teachers/_TEMPLATE.md](teachers/_TEMPLATE.md)）。只存文字，不保存截图。
 
 ## 已建档老师
 
@@ -17,5 +16,5 @@
 
 ## 用法
 
-- 截取记录：`/capture-chat 石圣哲`（computer-use 截图 → 转写进 `石圣哲.md` + 截图存 `screenshots/石圣哲/`）。
+- 记录聊天：把与石老师的微信截图（或文字）发给 Claude，`/log-chat 石圣哲` → 转写进 `石圣哲.md`（不存截图）。
 - 起草回复：`/draft-reply 石圣哲 <老师发来的消息>`。

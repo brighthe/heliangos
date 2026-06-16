@@ -20,9 +20,9 @@
 
 详见 [wechat/README.md](wechat/README.md)。聊天记录按阶段分子模块归档，当前子模块为 [wechat/大连理工大学博士后/](wechat/大连理工大学博士后/)（我在大工做博士后期间与相关老师的沟通）。要点：
 
-1. **每位老师一个文件**：`wechat/大连理工大学博士后/teachers/<姓名>.md`，含「人物档案 + 沟通口径 + 聊天记录」三段（格式见 [_TEMPLATE.md](wechat/大连理工大学博士后/teachers/_TEMPLATE.md)）。原始截图存同级 `screenshots/<姓名>/`。
-2. **截取记录（computer-use，允许）**：用 `/capture-chat <老师>` 让你截图微信会话、转写成文字追加到该老师文件、并备份截图。**只截图/点会话/滚动，绝不替我打字或发送**——键盘输入与批量动作已被 Hook 拦截（见下）。
-3. **起草回复（只起草，我自己发）**：我把老师消息粘贴给你（或它已在聊天记录里）；你先读该老师档案与历史，再用 `/draft-reply` 起草草稿，**由我亲自发送**。
+1. **每位老师一个文件**：`wechat/大连理工大学博士后/teachers/<姓名>.md`，含「人物档案 + 关键信息 + 当前未决 + 聊天记录」（格式见 [_TEMPLATE.md](wechat/大连理工大学博士后/teachers/_TEMPLATE.md)）。
+2. **记录聊天（我发截图，你只存文字）**：我把与老师的微信**聊天截图**（或文字）发给你，用 `/log-chat <老师>` 转写成文字、按时间去重追加到该老师文件，并据此更新档案。**只存文字，不保存截图**；不要用 computer-use 去驱动微信（既慢又会被其他窗口抢焦点）。
+3. **起草回复（只起草，我自己发）**：我把老师消息发给你（或它已在聊天记录里）；你先读该老师档案与历史，再用 `/draft-reply` 起草草稿，**由我亲自发送**。
 
 ## 写作约定（对外沟通，尤其微信工作沟通）
 
@@ -36,13 +36,13 @@
 
 - **技能（自动触发）**：`wechat-work-style`（微信工作沟通家族写作风格）。
 - **子代理（委派）**：`intent-analyst`（拆解老师消息的真实来意）、`reply-reviewer`（回复草稿得体性深审，只读产出清单）。
-- **斜杠命令**：`/capture-chat`（computer-use 截图微信→转写归档）、`/draft-reply`（起草回复）、`/log-chat`（手动把一段聊天规范记入对应老师文件）。
+- **斜杠命令**：`/log-chat`（把我粘贴的聊天截图/文字转写归档）、`/draft-reply`（起草回复）。
 
 这些能力打包为可安装插件 `wechat-reply-kit`（见 [plugins/wechat-reply-kit/README.md](plugins/wechat-reply-kit/README.md)），供其他仓库复用。
 
 ## Hook
 
-[.claude/settings.json](.claude/settings.json) 配置了 `PreToolUse` 钩子：computer-use 的**键盘输入与批量动作**（`type`/`key`/`hold_key`/`*_batch`/`teach_*`）会被 [.claude/hooks/block-wechat-automation.ps1](.claude/hooks/block-wechat-automation.ps1) 拦截。即：**允许**用截图、点会话、滚动来「截取/浏览」聊天记录；**禁止**用键盘替我打字、发送消息。把「可截取、不代发」固化为硬约束。
+本仓库的工作方式是「我发截图/文字，你只产出文本」，Claude **不**驱动微信。作为防御性硬约束，[.claude/settings.json](.claude/settings.json) 配置了 `PreToolUse` 钩子，由 [.claude/hooks/block-wechat-automation.ps1](.claude/hooks/block-wechat-automation.ps1) 拦截 computer-use 的键盘输入与批量动作（`type`/`key`/`hold_key`/`*_batch`/`teach_*`），确保 Claude 任何情况下都**不会替我打字或发送微信消息**。
 
 ## 隐私与安全（重要）
 
