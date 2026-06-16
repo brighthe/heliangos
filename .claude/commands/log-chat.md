@@ -9,7 +9,7 @@ argument-hint: [老师姓名 +（粘贴的聊天内容）]
 
 步骤：
 
-1. 确定是哪位老师，定位 `wechat/teachers/<该老师>.md`。若不存在，先复制 [wechat/teachers/_TEMPLATE.md](../../wechat/teachers/_TEMPLATE.md) 建档（提醒我补全档案字段）。
+1. 确定是哪位老师，定位 `wechat/大连理工大学博士后/teachers/<该老师>.md`。若不存在，先复制 [wechat/大连理工大学博士后/teachers/_TEMPLATE.md](../../wechat/大连理工大学博士后/teachers/_TEMPLATE.md) 建档（提醒我补全档案字段）。
 2. 把聊天内容整理为统一格式，**追加**到该文件「聊天记录」段末尾：
    - 每条形如 `YYYY-MM-DD　[老师]：……` / `YYYY-MM-DD　[我]：……`。
    - 日期不明确时用我提供的或标注「日期待补」，不要编造具体日期。

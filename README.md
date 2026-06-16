@@ -21,14 +21,15 @@
 
 - **技能** `wechat-work-style`：微信工作沟通写作风格。
 - **子代理** `intent-analyst`（拆解来意）、`reply-reviewer`（回复得体性审校）。
-- **命令** `/draft-reply`（起草回复）、`/log-chat`（记录聊天）。
-- **Hook**：拦截直接操作微信的工具，强制「只起草、不代发」。
+- **命令** `/capture-chat`（截图微信→转写归档）、`/draft-reply`（起草回复）、`/log-chat`（手动记录聊天）。
+- **Hook**：放行截图/浏览微信，拦截键盘输入与批量动作，强制「可截取、不代发」。
 
 同一套能力也打包为可安装插件 [`wechat-reply-kit`](plugins/wechat-reply-kit/)。
 
 ## 用法速览
 
-1. 给某位老师建档：复制 [wechat/teachers/_TEMPLATE.md](wechat/teachers/_TEMPLATE.md) 为 `wechat/teachers/<姓名>.md`，填档案与口径。
-2. 老师发来消息时，把消息粘贴给 Claude（或 `/log-chat` 记入文件），用 `/draft-reply` 起草回复。
-3. 重要回复发出前，用 `/review-reply` 思路（委派 `reply-reviewer`）做一遍得体性检查。
-4. **自己复制、发送**——Claude 只产出草稿。
+1. 给某位老师建档：复制 [wechat/大连理工大学博士后/teachers/_TEMPLATE.md](wechat/大连理工大学博士后/teachers/_TEMPLATE.md) 为 `teachers/<姓名>.md`，填档案与口径，并在子模块 README 登记。
+2. 截取聊天记录：`/capture-chat <老师>`——Claude 用 computer-use 截图微信会话、转写进该老师文件、并把原图存到 `screenshots/<老师>/`（只截取、不代发）。
+3. 起草回复：`/draft-reply <老师> <消息>`，Claude 读档案与历史后给草稿；也可 `/log-chat` 手动记录一段聊天。
+4. 重要回复发出前，委派 `reply-reviewer` 做一遍得体性检查。
+5. **自己复制、发送**——Claude 只产出回复草稿，绝不替你发送。

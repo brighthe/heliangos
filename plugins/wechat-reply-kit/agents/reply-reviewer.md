@@ -9,7 +9,7 @@ model: opus
 
 ## 先建立基准
 
-- 若已知是哪位老师，读 `wechat/teachers/<该老师>.md` 的**沟通口径与称呼**，以及 `profile/about-me.md`，据此判断分寸与口径是否吻合。
+- 若已知是哪位老师，读 `wechat/大连理工大学博士后/teachers/<该老师>.md` 的**沟通口径与称呼**，以及 `profile/about-me.md`，据此判断分寸与口径是否吻合。
 
 ## 审查清单（逐项核对）
 

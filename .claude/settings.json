@@ -2,7 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__computer-use__.*|mcp__Claude_in_Chrome__.*|mcp__claude-in-chrome__.*|mcp__Claude_Preview__.*",
+        "matcher": "mcp__computer-use__(type|key|hold_key|computer_batch|teach_batch|teach_step)",
         "hooks": [
           {
             "type": "command",
