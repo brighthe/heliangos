@@ -11,6 +11,7 @@
 | 老师 | 单位 / 角色 | 文件 |
 | --- | --- | --- |
 | 石圣哲 | 大连理工大学 力学与航空航天学院 综合办公室 | [teachers/石圣哲.md](teachers/石圣哲.md) |
+| 郭旭 | 大连理工大学，院士 | [teachers/郭旭.md](teachers/郭旭.md) |
 
 > 新增老师：复制 `teachers/_TEMPLATE.md` 为 `teachers/<姓名>.md`，填好档案与口径，并在上表登记。
 
