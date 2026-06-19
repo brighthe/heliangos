@@ -13,6 +13,8 @@
 | 石圣哲 | 大连理工大学 力学与航空航天学院 综合办公室 | [teachers/石圣哲.md](teachers/石圣哲.md) |
 | 郭旭 | 大连理工大学，院士；**我的博士后导师** | [teachers/郭旭.md](teachers/郭旭.md) |
 | 刘鹏程 | 大连工业软件创新发展研究院；郭旭院士秘书 | [teachers/刘鹏程.md](teachers/刘鹏程.md) |
+| 陈玉震 | 大连理工大学，研究院副院长 _(待确认)_；郭老师指定的入站对接负责老师 | [teachers/陈玉震.md](teachers/陈玉震.md) |
+| 梅跃 | 大连理工大学，教授 _(待确认)_；把关我科研计划/进站考核表的老师 | [teachers/梅跃.md](teachers/梅跃.md) |
 
 > 新增老师：复制 `teachers/_TEMPLATE.md` 为 `teachers/<姓名>.md`，填好档案与口径，并在上表登记。
 
