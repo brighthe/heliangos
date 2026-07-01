@@ -4,7 +4,7 @@
 
 ## 内容
 
-- `teachers/<姓名>.md` —— 每位老师一个文件：**人物档案 + 关键信息 + 当前未决 + 聊天记录**（格式见 [teachers/_TEMPLATE.md](teachers/_TEMPLATE.md)）。只存文字，不保存截图。
+- `teachers/<姓名>.md` —— 每位老师一个文件：**人物档案 + 关键信息 + 当前未决 + 聊天记录**（格式见 [_TEMPLATE.md](_TEMPLATE.md)）。只存文字，不保存截图。
 
 ## 已建档老师
 
@@ -16,7 +16,7 @@
 | 陈玉震 | 大连理工大学，研究院副院长 _(待确认)_；郭老师指定的入站对接负责老师 | [teachers/陈玉震.md](teachers/陈玉震.md) |
 | 梅跃 | 大连理工大学，教授 _(待确认)_；把关我科研计划/进站考核表的老师 | [teachers/梅跃.md](teachers/梅跃.md) |
 
-> 新增老师：复制 `teachers/_TEMPLATE.md` 为 `teachers/<姓名>.md`，填好档案与口径，并在上表登记。
+> 新增老师：复制 `_TEMPLATE.md` 为 `teachers/<姓名>.md`，填好档案与口径，并在上表登记。
 
 ## 进度速览（进站事务）
 

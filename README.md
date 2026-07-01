@@ -24,11 +24,11 @@
 - **命令** `/log-chat`（把粘贴的聊天截图/文字转写归档）、`/draft-reply`（起草回复）。
 - **Hook**：拦截 computer-use 键盘/批量动作，确保 Claude 永不替你打字或发送微信消息。
 
-同一套能力也打包为可安装插件 [`wechat-reply-kit`](plugins/wechat-reply-kit/)。
+同一套能力在 `.codex/` + `.agents/` + [AGENTS.md](AGENTS.md) 下也为 Codex 等其他 AI 各备了一份。
 
 ## 用法速览
 
-1. 给某位老师建档：复制 [wechat/大连理工大学博士后/teachers/_TEMPLATE.md](wechat/大连理工大学博士后/teachers/_TEMPLATE.md) 为 `teachers/<姓名>.md`，填档案，并在子模块 README 登记。
+1. 给某位老师建档：复制 [wechat/大连理工大学博士后/_TEMPLATE.md](wechat/大连理工大学博士后/_TEMPLATE.md) 为 `teachers/<姓名>.md`，填档案，并在子模块 README 登记。
 2. 记录聊天：把与老师的微信**截图**（或文字）发给 Claude，`/log-chat <老师>`——转写成文字、按时间去重追加到该老师文件（只存文字，不存截图）。
 3. 起草回复：`/draft-reply <老师> <消息>`，Claude 读档案与历史后给草稿。
 4. 重要回复发出前，委派 `reply-reviewer` 做一遍得体性检查。
