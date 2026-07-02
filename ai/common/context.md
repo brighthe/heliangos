@@ -38,7 +38,10 @@
 
 - **技能（自动触发）**：`wechat-work-style`（微信工作沟通家族写作风格）。
 - **子代理（委派）**：`intent-analyst`（拆解老师消息的真实来意）、`reply-reviewer`（回复草稿得体性深审，只读产出清单）。
-- **斜杠命令**：`/log-chat`（把我粘贴的聊天截图/文字转写归档）、`/draft-reply`（起草回复）。
+- **斜杠命令/常用维护**：
+  - `/log-chat`（把我粘贴的聊天截图/文字转写归档）
+  - `/draft-reply`（起草回复）
+  - `/sync-obsidian`（检查 Git 状态干净后，自动运行根目录 `Sync-ToObsidian.ps1` 将仓库增量同步至 iCloud Obsidian）
 
 > 各 AI 的配置**存放位置**与 **Hook 具体实现路径**不同，见其专属文件（[ai/claude/CLAUDE.md](../claude/CLAUDE.md) / [ai/agents/AGENTS.md](../agents/AGENTS.md)）。**修改能力（技能/子代理/命令/hook）时，各运行时的副本需手工同步**（不会自动同步）。
 
