@@ -9,4 +9,4 @@
 
 ## Hook（“不驱动微信”硬约束的实现）
 
-[.codex/hooks.json](../../.codex/hooks.json) 配置了 `PreToolUse` 钩子，拦截 computer-use 的键盘输入与批量动作（`type`/`key`/`hold_key`/`computer_batch`/`teach_batch`/`teach_step`）。脚本**复用 Claude 侧的** [.claude/hooks/block-wechat-automation.ps1](../../.claude/hooks/block-wechat-automation.ps1)（另有 `.codex/hooks/block-wechat-automation.ps1` 副本），确保任何情况下都**不会替我打字或发送微信消息**。
+[.codex/hooks.json](../../.codex/hooks.json) 配置了 `PreToolUse` 钩子，拦截 computer-use 的键盘输入与批量动作（`type`/`key`/`hold_key`/`computer_batch`/`teach_batch`/`teach_step`）。脚本**复用 Claude 侧的** [.claude/hooks/block-wechat-automation.ps1](../../.claude/hooks/block-wechat-automation.ps1)，确保任何情况下都**不会替我打字或发送微信消息**。
