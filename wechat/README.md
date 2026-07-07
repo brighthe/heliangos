@@ -7,11 +7,16 @@
 ```
 wechat/
 ├── README.md                       # 本说明
-├── 大连理工大学博士后/              # 子模块：我在大工做博士后期间与相关老师的沟通
+├── dalian-university-of-technology-postdoc/ # 子模块：我在大工做博士后期间与相关老师的沟通
 │   ├── README.md
 │   ├── _TEMPLATE.md                # 新建老师档案的模板（复制它）
 │   └── teachers/
 │       └── <姓名>.md               # 每位老师一个文件：档案 + 关键信息 + 未决 + 聊天记录
+├── xiangtan-university-phd/         # 子模块：我在湘潭大学攻读博士期间与老师、同门、同事的沟通
+│   ├── README.md
+│   ├── _TEMPLATE.md                # 新建联系人档案的模板（复制它）
+│   └── contacts/
+│       └── <姓名>.md               # 每位联系人一个文件：档案 + 关键信息 + 未决 + 聊天记录
 └── 高校求职/                       # 子模块：我求职高校教职期间与各校的沟通（按学校再分一层）
     ├── README.md
     ├── _TEMPLATE.md                # 新建联系人档案的模板（全校共用）
