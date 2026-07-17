@@ -10,7 +10,7 @@
 
 | 模块 | 路径 | 说明 |
 | --- | --- | --- |
-| 自我档案 | [profile/](profile/) | 身份、背景、研究方向、对外口径，供各模块复用 |
+| 自我档案 | [profile/](profile/) | 身份、背景、研究方向、对外口径，供各模块复用。含 [resume/](profile/resume/)（LaTeX 中文简历，求职/对外多场景共用的唯一权威版本） |
 | 微信沟通 | [wechat/](wechat/) | 与各工作对象的微信聊天记录、沟通口径与**回复协助**（当前核心模块）。子模块：[dalian-university-of-technology-postdoc](wechat/dalian-university-of-technology-postdoc/)、[xiangtan-university-phd](wechat/xiangtan-university-phd/)、[高校求职](wechat/高校求职/) |
 
 未来可按需新增模块（邮件、人物档案、日程、决策记录等），在根目录开文件夹并在本表与 [ai/common/context.md](ai/common/context.md) 登记即可。
