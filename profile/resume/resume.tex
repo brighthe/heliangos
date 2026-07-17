@@ -82,11 +82,11 @@ BoldFont=*-Bold,
 	% 页眉：校标组合+学院名
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[anchor=north, inner sep=0pt](header) at (current page.north){
-			\includegraphics[width=\paperwidth]{images/head.png}
+			\includegraphics[width=\paperwidth]{images/header-band.png}
 		};
 		\node[anchor=west](school_logo) at (header.west){
 			\hspace{0.5cm}
-			\includegraphics[width=0.2\textwidth]{images/nbu_logo.png}
+			\includegraphics[width=0.2\textwidth]{images/xtu-logo.png}
 		};
 		\node[anchor=east](school_name) at(header.east){
 			\textcolor{white}{\textbf{\school}}
@@ -98,7 +98,7 @@ BoldFont=*-Bold,
 	% 页脚：联系方式
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[anchor=south, inner sep=0pt](footer) at (current page.south){
-			\includegraphics[width=\paperwidth]{images/foot.png}
+			\includegraphics[width=\paperwidth]{images/footer-band.png}
 		};
 		\node[anchor=center] at(footer.center){\contact};
 	\end{tikzpicture}
@@ -106,7 +106,7 @@ BoldFont=*-Bold,
 	% 背景
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[opacity=0.05] at(current page.center){
-			\includegraphics[width=0.7\paperwidth, keepaspectratio]{images/nbu_logo2.png}
+			\includegraphics[width=0.7\paperwidth, keepaspectratio]{images/xtu-watermark.png}
 		};
 	\end{tikzpicture}
 	
@@ -158,7 +158,7 @@ BoldFont=*-Bold,
 	\begin{minipage}[t]{0.2\textwidth}
 		\vspace{2.5em}
 		\setlength{\fboxsep}{0pt}
-		\doublebox{\includegraphics[width=\linewidth]{images/heliang.jpg}}
+		\doublebox{\includegraphics[width=\linewidth]{images/photo-id.jpg}}
 	\end{minipage}
 	
 	% 学术论文
