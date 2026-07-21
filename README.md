@@ -13,7 +13,7 @@
 | 自我档案 | [profile/](profile/) | 身份、背景、研究方向、对外口径，供各模块复用。含 [resume/](profile/resume/)（LaTeX 中文简历，求职/对外多场景共用的唯一权威版本） |
 | 微信沟通 | [wechat/](wechat/) | 与各工作对象的微信聊天记录、沟通口径与**回复协助**（当前核心模块）。子模块：[dalian-university-of-technology-postdoc](wechat/dalian-university-of-technology-postdoc/)、[xiangtan-university-phd](wechat/xiangtan-university-phd/)、[高校求职](wechat/高校求职/) |
 
-未来可按需新增模块（邮件、人物档案、日程、决策记录等），在根目录开文件夹并在本表与 [ai/common/context.md](ai/common/context.md) 登记即可。
+未来可按需新增模块（邮件、人物档案、日程、决策记录等），在根目录开文件夹并在本表与 [ai/context.md](ai/context.md) 登记即可。
 
 ## AI 架构
 
@@ -22,11 +22,11 @@
 ```
 heliangos/
 ├── README.md                  # ① 门面：给人看（GitHub 首页）
-├── CLAUDE.md / AGENTS.md      # ② 指令层·根桩：各 7 行，只指路（工具从根目录自动加载，必须留根）
-├── ai/                        # ② 指令层·正文
-│   ├── common/context.md      #    ★ 所有 AI 共享上下文的唯一来源
-│   ├── claude/CLAUDE.md       #    Claude Code 专属细节（配置位置、hook 实现）
-│   └── agents/AGENTS.md       #    Codex 等专属细节
+├── CLAUDE.md                  # ② 指令层：Claude Code 专属细节（配置位置、hook 实现）
+├── AGENTS.md                  # ② 指令层：Codex / Antigravity 等专属细节
+├── ai/                        # ② 指令层·工具无关正文
+│   ├── context.md             #    ★ 所有 AI 共享上下文的唯一来源
+│   └── git-workflow.md        #    Git 提交/推送工作流（含脱敏纪律）
 ├── .claude/                   # ③ 可执行配置：Claude Code（技能/子代理/命令/settings + hook 脚本）
 ├── .codex/                    # ③ 可执行配置：Codex（子代理 toml + hooks.json）
 ├── .agents/                   # ③ 可执行配置：跨工具技能目录（Codex 等按此约定发现技能）
@@ -36,7 +36,7 @@ heliangos/
 ### 设计原则
 
 - **散文 vs 可执行**：能靠"叮嘱"实现的（工作方式、写作约定、隐私要求）写成 Markdown 进指令层；必须**被触发、具名调用或强制拦截**才成立的（斜杠命令、技能、子代理、安全 hook）做成可执行配置进 ③。
-- **消重**：通用规则只存一份于 [ai/common/context.md](ai/common/context.md)——改它，所有 AI 同时生效。根 `CLAUDE.md`/`AGENTS.md` 是薄桩（工具约定在根目录找它们，删/挪即失效），`ai/` 下两份专属文件只写运行时差异。
+- **消重**：通用规则只存一份于 [ai/context.md](ai/context.md)——改它，所有 AI 同时生效。根 `CLAUDE.md`/`AGENTS.md` 是各工具的专属文件（工具约定在根目录自动加载，必须留根），只写运行时差异：`CLAUDE.md` 通过 `@ai/context.md` import 在会话启动时自动展开加载共享上下文；`AGENTS.md` 因 agents.md 标准无 import 机制，靠开头「必读入口」引导读取。
 - **刻意冗余仅一处**：`wechat-work-style` 技能在 `.claude/skills/` 与 `.agents/skills/` 各一份（两家工具各认各的目录、格式无法合并），**修改时需手工同步**；hook 脚本只有 `.claude/hooks/` 一份，`.codex/hooks.json` 直接复用它。
 
 ### 能力清单（各 AI 均已配备）
