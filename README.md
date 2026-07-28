@@ -2,54 +2,71 @@
 
 > **He Liang OS** — Liang He（何亮 / [brighthe](https://github.com/brighthe)）的个人中枢仓库。
 >
-> ⚠️ **Public 仓库**：含真实人名与私人聊天记录，公开可见。写入/提交前请对敏感内容从严把关、必要时脱敏。
+> **Public 仓库**：真实联系人与聊天文本是本仓库的版本化资产；默认忠实记录，只有我明确要求时才脱敏。
 
-把「我是谁、我和谁打交道、我们聊过什么」沉淀成结构化、可被 AI（Claude Code / Codex 等）读取的个人上下文，让 AI 在协助我处理对外沟通、写作与决策时有据可依。架构随需要渐进生长。
+本仓库把“我是谁、我和谁打交道、我们聊过什么”沉淀为结构化、可被 AI 读取的个人上下文，用于协助对外沟通、写作和决策。它不是代码项目，结构随实际需要渐进生长。
 
 ## 模块
 
 | 模块 | 路径 | 说明 |
 | --- | --- | --- |
-| 自我档案 | [profile/](profile/) | 身份、背景、研究方向、对外口径，供各模块复用。含 [resume/](profile/resume/)（LaTeX 中文简历，求职/对外多场景共用的唯一权威版本） |
-| 微信沟通 | [wechat/](wechat/) | 与各工作对象的微信聊天记录、沟通口径与**回复协助**（当前核心模块）。子模块：[dalian-university-of-technology-postdoc](wechat/dalian-university-of-technology-postdoc/)、[xiangtan-university-phd](wechat/xiangtan-university-phd/)、[高校求职](wechat/高校求职/) |
+| 自我档案 | [profile/](profile/) | 身份、背景、研究方向和对外口径；[profile/resume/](profile/resume/) 是 LaTeX 中文简历的权威版本 |
+| 职业生命周期 | [career/](career/) | 任职、聘期、考核、出站等动态职业阶段事实 |
+| 微信沟通 | [wechat/](wechat/) | 联系人档案、聊天原文、沟通口径和回复协助 |
+| AI 规则 | [ai/](ai/) | 微信归档路由、写作风格与 Git 工作流等工具无关规则 |
 
-未来可按需新增模块（邮件、人物档案、日程、决策记录等），在根目录开文件夹并在本表与 [ai/context.md](ai/context.md) 登记即可。
+未来新增邮件、日程或决策记录等模块时，在根目录建立语义明确的目录，并在本表登记。
 
-## AI 架构
+## 文档职责
 
-本仓库同时服务多个 AI 工具（Claude Code、Codex、Antigravity 等）。整体分**三层**，各层职责与"能不能挪动"都不同：
+| 文档 | 唯一职责 |
+| --- | --- |
+| 本 README | 仓库定位、模块地图、AI 架构与使用入口 |
+| [career/README.md](career/README.md) | 职业生命周期与原始材料边界 |
+| [wechat/README.md](wechat/README.md) | 联系人目录、YAML schema、索引与信息边界 |
+| [ai/wechat-workflow.md](ai/wechat-workflow.md) | 聊天归档、联系人定位和跨仓库事实路由 |
+| [ai/wechat-writing-style.md](ai/wechat-writing-style.md) | 微信回复的共享写作风格 |
+| [AGENTS.md](AGENTS.md) / [CLAUDE.md](CLAUDE.md) | 各 AI 运行时入口、配置位置与 Hook 差异 |
+| [ai/git-workflow.md](ai/git-workflow.md) | 仅在 commit 或 push 时加载的 Git 纪律 |
 
-```
+通用规则按职责只维护一份；`.agents/`、`.claude/` 和 `.codex/` 只保留触发入口与运行时配置。
+
+## 目录结构
+
+```text
 heliangos/
-├── README.md                  # ① 门面：给人看（GitHub 首页）
-├── CLAUDE.md                  # ② 指令层：Claude Code 专属细节（配置位置、hook 实现）
-├── AGENTS.md                  # ② 指令层：Codex / Antigravity 等专属细节
-├── ai/                        # ② 指令层·工具无关正文
-│   ├── context.md             #    ★ 所有 AI 共享上下文的唯一来源
-│   └── git-workflow.md        #    Git 提交/推送工作流（含脱敏纪律）
-├── .claude/                   # ③ 可执行配置：Claude Code（技能/子代理/命令/settings + hook 脚本）
-├── .codex/                    # ③ 可执行配置：Codex（子代理 toml + hooks.json）
-├── .agents/                   # ③ 可执行配置：跨工具技能目录（Codex 等按此约定发现技能）
-└── profile/  wechat/          # 内容资产：仓库的真正价值（见上"模块"表）
+├── README.md
+├── AGENTS.md
+├── CLAUDE.md
+├── ai/
+│   ├── wechat-workflow.md
+│   ├── wechat-writing-style.md
+│   └── git-workflow.md
+├── profile/
+├── career/
+├── wechat/
+│   ├── README.md
+│   ├── contacts/<姓名>.md
+│   ├── templates/contact.md
+│   └── indexes/
+│       ├── by-context.md
+│       └── by-repository.md
+├── .agents/
+├── .claude/
+└── .codex/
 ```
-
-### 设计原则
-
-- **散文 vs 可执行**：能靠"叮嘱"实现的（工作方式、写作约定、隐私要求）写成 Markdown 进指令层；必须**被触发、具名调用或强制拦截**才成立的（斜杠命令、技能、子代理、安全 hook）做成可执行配置进 ③。
-- **消重**：通用规则只存一份于 [ai/context.md](ai/context.md)——改它，所有 AI 同时生效。根 `CLAUDE.md`/`AGENTS.md` 是各工具的专属文件（工具约定在根目录自动加载，必须留根），只写运行时差异：`CLAUDE.md` 通过 `@ai/context.md` import 在会话启动时自动展开加载共享上下文；`AGENTS.md` 因 agents.md 标准无 import 机制，靠开头「必读入口」引导读取。
-- **刻意冗余仅一处**：`wechat-work-style` 技能在 `.claude/skills/` 与 `.agents/skills/` 各一份（两家工具各认各的目录、格式无法合并），**修改时需手工同步**；hook 脚本只有 `.claude/hooks/` 一份，`.codex/hooks.json` 直接复用它。
-
-### 能力清单（各 AI 均已配备）
-
-- **技能** `wechat-work-style`：微信工作沟通写作风格。
-- **子代理** `intent-analyst`（拆解来意）、`reply-reviewer`（回复得体性审校）。
-- **命令** `/log-chat`（把粘贴的聊天截图/文字转写归档）、`/draft-reply`（起草回复）。
-- **安全 hook**（硬约束）：`PreToolUse` 拦截 computer-use 的键盘输入与批量动作，确保 AI **任何情况下不会替我打字或发送微信消息**——这是写进拦截器的保证，不是靠模型自觉的请求。
 
 ## 用法速览
 
-1. 给某位老师/联系人建档：按对应子模块 README 复制模板，例如 [wechat/dalian-university-of-technology-postdoc/_TEMPLATE.md](wechat/dalian-university-of-technology-postdoc/_TEMPLATE.md) 或 [wechat/xiangtan-university-phd/_TEMPLATE.md](wechat/xiangtan-university-phd/_TEMPLATE.md)，填档案，并在子模块 README 登记。
-2. 记录聊天：把与老师/联系人的微信**截图**（或文字）发给 Claude，`/log-chat <姓名>`——转写成文字、按时间去重追加到对应文件（只存文字，不存截图）。
-3. 起草回复：`/draft-reply <姓名> <消息>`，Claude 读档案与历史后给草稿。
-4. 重要回复发出前，委派 `reply-reviewer` 做一遍得体性检查。
-5. **自己复制、发送**——Claude 只产出回复草稿，绝不替你发送。
+1. 新建联系人：复制 [wechat/templates/contact.md](wechat/templates/contact.md) 到 `wechat/contacts/<姓名>.md`，填写 frontmatter 与档案，并更新两个联系人索引。
+2. 记录聊天：提供截图或文字，使用 `wechat-log-and-route` 或 `/log-chat <姓名>`；AI 忠实转写、去重追加，并路由明确的派生事实。
+3. 起草回复：使用 `/draft-reply <姓名> <消息>`；AI 读取联系人档案，按 `wechat-work-style` 给出草稿。
+4. 重要回复可使用 `intent-analyst` 分析来意、使用 `reply-reviewer` 审校；最终消息由我自己发送。
+
+AI 不驱动微信，也不替我输入或发送消息。各运行时均通过 Hook 拦截 computer-use 的键盘输入与批量动作。
+
+## GitHub 与 iCloud 边界
+
+- GitHub 保存 Markdown、YAML、LaTeX、脚本、配置和其他可维护源文件，并负责同步与版本管理。
+- iCloud 只保存 `.doc`、`.docx`、签章 PDF、扫描件、图片及其他原始材料，不镜像本 Git 工作区。
+- Markdown 中引用 iCloud 材料时使用 `iCloudDrive:<relative-path>`，不写机器相关绝对路径。
