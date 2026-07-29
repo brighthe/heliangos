@@ -7,7 +7,7 @@
 微信模块按“联系人实体”保存沟通事件，业务仓库按“领域”保存由沟通确认的事实：
 
 - `heliangos:wechat/contacts/`：人物关系、称呼、沟通口径、沟通层未决和聊天原文。
-- `heliangos:career/dlut-postdoc.md`：博士后官方身份、行政生命周期和关键节点。
+- `heliangos:career/dlut-postdoc/README.md`：博士后官方身份、行政生命周期和关键节点。
 - `dut-institute-work`：研究院任务、计划、进度、会议结论和交付物索引。
 - `dut-postdoc`：科研路线、文献认识、工作汇报和可复用技术知识。
 - `soptx`：软件功能、缺陷、实现任务和验证结果。
@@ -63,7 +63,7 @@ related_repositories: []
 | 内容 | 去处 |
 | --- | --- |
 | 人物关系、称呼、回复偏好、聊天原文 | 当前联系人档案 |
-| 博士后行政身份、系统节点、考核与出站要求 | `heliangos:career/dlut-postdoc.md` |
+| 博士后行政身份、系统节点、考核与出站要求 | `heliangos:career/dlut-postdoc/README.md` 及对应专题页 |
 | 研究院任务、分工、计划、进度 | `dut-institute-work` |
 | 科研路线、调研认识、工作汇报 | `dut-postdoc` |
 | 软件功能、缺陷、实现与验证任务 | `soptx` |

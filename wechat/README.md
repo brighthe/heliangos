@@ -50,7 +50,7 @@ related_repositories: []
 | 内容 | 单一事实来源 |
 | --- | --- |
 | 人物关系、称呼、沟通口径、沟通层未决、聊天原文 | 当前联系人文件 |
-| 博士后行政生命周期 | `heliangos:career/dlut-postdoc.md` |
+| 博士后行政生命周期 | `heliangos:career/dlut-postdoc/README.md` |
 | 研究院任务、计划与进度 | `dut-institute-work` |
 | 科研路线、调研与工作汇报 | `dut-postdoc` |
 | 软件功能、缺陷与实现任务 | `soptx` |
