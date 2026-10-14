@@ -4,13 +4,14 @@
 
 ## dlut-postdoc
 
-共 11 位。
+共 12 位。
 
 - [石圣哲](../contacts/石圣哲.md)
 - [郭旭](../contacts/郭旭.md)
 - [魏来](../contacts/魏来.md)
 - [刘鹏程](../contacts/刘鹏程.md)
 - [陈玉震](../contacts/陈玉震.md)
+- [陈国海](../contacts/陈国海.md)
 - [李宁宁](../contacts/李宁宁.md)
 - [梅跃](../contacts/梅跃.md)
 - [关曼](../contacts/关曼.md)

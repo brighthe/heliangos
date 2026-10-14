@@ -19,11 +19,12 @@
 
 ## 无长期仓库映射
 
-共 17 位。
+共 18 位。
 
 - [石圣哲](../contacts/石圣哲.md)
 - [魏来](../contacts/魏来.md)
 - [刘鹏程](../contacts/刘鹏程.md)
+- [陈国海](../contacts/陈国海.md)
 - [梅跃](../contacts/梅跃.md)
 - [关曼](../contacts/关曼.md)
 - [崔天晨](../contacts/崔天晨.md)
